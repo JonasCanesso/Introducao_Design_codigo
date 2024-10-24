@@ -1,9 +1,10 @@
 import numpy
 from typing import List
+from .interfaces.driver_handler_interface import DriverHandlerInteface
 
-class NumpyHandler:
+class NumpyHandler(DriverHandlerInteface):
     def __init__(self) -> None:
-        self.np = numpy
+        self.__np = numpy
 
     def standard_derivation(self, numbers: List[float]) -> float:
-        return self.np.std(numbers)
+        return self.__np.std(numbers)
